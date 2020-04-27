@@ -24,6 +24,7 @@ class Login extends React.Component {
       .post('./login', this.state.credentials)
       .then((response) => {
         localStorage.setItem('token', response.data.payload);
+        this.props.history.push('/protected');
       })
       .catch((error) => {
         localStorage.removeItem('token');
@@ -35,12 +36,14 @@ class Login extends React.Component {
     return (
       <div>
         <form onSubmit={this.login}>
+          <label>Username: </label>
           <input
             type="text"
             name="username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
           />
+          <label>Password: </label>
           <input
             type="password"
             name="password"
