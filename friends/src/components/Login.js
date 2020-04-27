@@ -1,4 +1,5 @@
 import React from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 class Login extends React.Component {
   state = {
@@ -19,6 +20,15 @@ class Login extends React.Component {
 
   login = (event) => {
     event.preventDefault();
+    axiosWithAuth()
+      .post('./login', this.state.credentials)
+      .then((response) => {
+        localStorage.setItem('token', response.data.payload);
+      })
+      .catch((error) => {
+        localStorage.removeItem('token');
+        console.error('invalid login: ', error);
+      });
   };
 
   render() {
