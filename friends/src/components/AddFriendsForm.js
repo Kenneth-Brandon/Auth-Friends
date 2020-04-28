@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-import { response } from 'express';
 
 const initialItem = {
   name: '',
@@ -8,7 +7,7 @@ const initialItem = {
   email: '',
 };
 
-const AddFriendForm = (props) => {
+const AddFriendsForm = (props) => {
   const [item, setItem] = useState(initialItem);
 
   const changeHandler = (event) => {
@@ -29,37 +28,41 @@ const AddFriendForm = (props) => {
   };
 
   return (
-    <div>
-      <h2>Add New Friend</h2>
+    <div className="add-friend">
+      <h1>Friends List</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="name"
-          onChange={changeHandler}
-          value={item.name}
-        />
+        <div className="inputs">
+          <input
+            className="single-input"
+            type="text"
+            name="name"
+            onChange={changeHandler}
+            placeholder="Name"
+            value={item.name}
+          />
 
-        <input
-          type="text"
-          name="age"
-          placeholder="Age"
-          onChange={changeHandler}
-          value={item.age}
-        />
+          <input
+            className="single-input"
+            type="text"
+            name="age"
+            onChange={changeHandler}
+            placeholder="Age"
+            value={item.age}
+          />
 
-        <input
-          type="text"
-          name="email"
-          placeholder="email"
-          onChange={changeHandler}
-          value={item.email}
-        />
-
-        <button>Add New Friend</button>
+          <input
+            className="single-input"
+            type="text"
+            name="email"
+            onChange={changeHandler}
+            placeholder="Email"
+            value={item.email}
+          />
+          <button>Add New Friend</button>
+        </div>
       </form>
     </div>
   );
 };
 
-export default AddFriendForm;
+export default AddFriendsForm;

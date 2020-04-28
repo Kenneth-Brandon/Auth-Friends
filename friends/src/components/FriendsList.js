@@ -1,8 +1,8 @@
 import React from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-import AddFriendsForm from '../components/AddFriendsForm';
+import AddFriendsForm from './AddFriendsForm';
 
-class FriendList extends React.Component {
+class FriendsList extends React.Component {
   state = {
     friends: [],
   };
@@ -23,20 +23,22 @@ class FriendList extends React.Component {
   render() {
     return (
       <div>
-        <h1>Friends</h1>
         <div>
+          <AddFriendsForm />
+        </div>
+
+        <div className="friend-card">
           {this.state.friends.map((friends) => (
-            <div key={friends.id}>
+            <div key={friends.id} className="friend">
               <p>Name: {friends.name}</p>
               <p>Age: {friends.age}</p>
               <p>Email: {friends.email}</p>
             </div>
           ))}
         </div>
-        <AddFriendsForm />
       </div>
     );
   }
 }
 
-export default FriendList;
+export default FriendsList;
