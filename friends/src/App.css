@@ -1,0 +1,71 @@
+html {
+  background-color: #00338d;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+button {
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: gray;
+  font-weight: bold;
+  width: 10%;
+  height: 25px;
+}
+
+button:hover {
+  background-color: #c60c30;
+  color: white;
+}
+
+label {
+  color: #ffffff;
+}
+
+.App {
+  text-align: center;
+}
+
+.friend-card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.friend {
+  width: 15%;
+  background-color: #c60c30;
+  margin: 10px 10px;
+  color: #ffffff;
+}
+
+.inputs {
+  text-align: center;
+  margin: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+.links {
+  color: #ffffff;
+  text-decoration: none;
+  padding-left: 10px;
+}
+.single-input {
+  margin: 10px;
+  width: 15%;
+  height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid #c60c30;
+}
